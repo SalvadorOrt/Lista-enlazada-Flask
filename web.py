@@ -18,6 +18,8 @@ def root():
             print(num)
             lista.prepend(num)
             print(lista.print())
+        elif 'eliminar_inicio' in request.form:
+            var = lista.prepop()
         elif 'eliminar' in request.form:
             var = lista.pop()
     cadena = '''
@@ -32,6 +34,9 @@ def root():
             </form>
             <form method = 'post'>
                 <button name = "eliminar" type="submit">Eliminar</button>
+            </form>
+            <form method = 'post'>
+                <button name = "eliminar_inicio" type="submit">Eliminar</button>
             </form>
             <h3>Elementos de la lista: {{lista}}</h3>
             <h3>Elementos eliminado: {{eliminado}}</h3>

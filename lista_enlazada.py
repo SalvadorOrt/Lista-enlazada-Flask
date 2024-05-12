@@ -49,3 +49,14 @@ class Lista:
             self.head = None
             self.tail = None
         return str(temp.elemento)
+    def prepop(self):
+        if self.length == 0:
+            return None
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+        return str(temp.elemento)
